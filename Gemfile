@@ -12,7 +12,7 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'haml-rails'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 gem 'font-awesome-sass'
 
 group :development, :test do
