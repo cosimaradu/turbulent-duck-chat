@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     $(window).resize(function () {
         var window_height = $(window).height(),
-            content_height = window_height - 300;
+            content_height = window_height - 200;
         wrapper.height(content_height);
         wrapper.stop().animate({
             scrollTop: wrapper[0].scrollHeight

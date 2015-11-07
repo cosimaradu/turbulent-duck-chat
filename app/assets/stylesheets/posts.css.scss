@@ -10,16 +10,16 @@
 }
 
 .screen {
-  background-color: #d8d8d8;
+  background-color: #f3f4f5;
 }
 
 .username {
   margin-top: 6px;
-  color: midnightblue;
+  color: white;
 }
 
 .timestamp {
-  color: coral;
+  color: #BBBBBB;
   margin-top: -20px;
   font-size: xx-small;
 }
@@ -66,4 +66,27 @@
   margin-top: -13px;
   left: -15px;
   top: 50%;
+}
+.effect7
+{
+  position:relative;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect7:before, .effect7:after
+{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  box-shadow:0 0 20px rgba(0,0,0,0.8);
+  top:0;
+  bottom:0;
+  left:20px;
+  right:20px;
+  border-radius:100px / 10px;
+}
+.effect7:after
+{
+  right:20px;
+  left:auto;
+  transform:skew(8deg) rotate(3deg);
 }
