@@ -1,0 +1,69 @@
+
+.screen_wrapper {
+  overflow: scroll;
+  width: 640px;
+  margin:auto;
+  padding:16px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+}
+
+.screen {
+  background-color: #d8d8d8;
+}
+
+.username {
+  margin-top: 6px;
+  color: midnightblue;
+}
+
+.timestamp {
+  color: coral;
+  margin-top: -20px;
+  font-size: xx-small;
+}
+
+.bubble
+{
+  position: relative;
+  width: 350px;
+  height: auto;
+  padding: 12px;
+  background: white;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  border: #000000 solid 2px;
+  margin-left: 20px;
+}
+
+.bubble:after
+{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 12px 15px 12px 0;
+  border-color: transparent #FFFFFF;
+  display: block;
+  width: 0;
+  z-index: 1;
+  margin-top: -12px;
+  left: -14px;
+  top: 50%;
+}
+
+.bubble:before
+{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 13px 16px 13px 0;
+  border-color: transparent #000000;
+  display: block;
+  width: 0;
+  z-index: 0;
+  margin-top: -13px;
+  left: -16px;
+  top: 50%;
+}
