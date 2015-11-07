@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   include ActionController::Live
   def index
-    @posts = Post.all.order("created_at desc").limit(10)
+    @posts = Post.all.order("created_at asc").limit(10)
   end
 
   def create

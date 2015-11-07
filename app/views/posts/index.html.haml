@@ -1,2 +1,15 @@
-.screen
-  -@posts.each |p|
+.screen_wrapper
+  .screen
+    %table
+      %tbody
+        -@posts.each do |p|
+          %tr
+            %td
+              %h2.username
+                =p.user
+              .timestamp
+                %i.fa.fa-clock-o
+                %strong=p.created_at.strftime("%-d/%b/%y @ %I:%M%p")
+            %td
+              .message.bubble
+                =p.message
