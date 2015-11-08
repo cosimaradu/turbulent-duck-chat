@@ -4,7 +4,7 @@
       %tbody
         -@posts.each do |p|
           %tr
-            %td
+            %td.name_column
               %h2.username.shadow
                 =p.user
               .timestamp
@@ -13,10 +13,9 @@
             %td
               .message.bubble
                 =p.message
-.poster_wrapper
-  .poster
-    %table
-      %tbody
-        %tr
-          %td
-
+.poster_wrapper.effect7
+  .poster.container
+    %form.form-inline{:role => "form"}
+      %input.name.form-control.vcenter{:placeholder => "Name", :type => "text", :style => "width: 120px"}
+      %textarea.message_text.form-control.vcenter{:placeholder => "Message", :rows => "3", :style => "width: 420px"}
+      %button.btn.btn-default.submit.vcenter{:type => "submit"}SEND

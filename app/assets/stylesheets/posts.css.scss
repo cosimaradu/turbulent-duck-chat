@@ -3,7 +3,41 @@
   overflow: scroll;
   width: 640px;
   margin:auto;
-  padding:0px;
+  padding:0;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  background-color: #f3f4f5;
+}
+
+.vcenter {
+  display: inline-block;
+  vertical-align: top;
+  float: none;
+}
+
+.name {
+  width: 120px;
+}
+
+.message {
+  width: 420px;
+}
+
+.submit {
+  font-size: large;
+}
+
+.poster {
+  background-color: #f3f4f5;
+  padding: 4px;
+}
+
+.poster_wrapper {
+  overflow: hidden;
+  width: 640px;
+  margin: 10px auto 0;
+  padding:0;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   border-radius: 12px;
@@ -11,7 +45,9 @@
 
 .screen {
   background-color: #f3f4f5;
+  padding: 4px;
 }
+
 
 .username {
   margin-top: 6px;
@@ -24,10 +60,14 @@
   font-size: xx-small;
 }
 
+.name_column{
+  width:150px;
+}
+
 .bubble
 {
   position: relative;
-  width: 350px;
+  width: 450px;
   height: auto;
   padding: 12px;
   background: white;
@@ -67,26 +107,9 @@
   left: -15px;
   top: 50%;
 }
-.effect7
-{
-  position:relative;
-  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
-.effect7:before, .effect7:after
-{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  box-shadow:0 0 20px rgba(0,0,0,0.8);
-  top:0;
-  bottom:0;
-  left:20px;
-  right:20px;
-  border-radius:100px / 10px;
-}
-.effect7:after
-{
-  right:20px;
-  left:auto;
-  transform:skew(8deg) rotate(3deg);
+
+.effect7 {
+  -webkit-box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.75);
 }

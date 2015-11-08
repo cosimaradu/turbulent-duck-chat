@@ -16,6 +16,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+textarea {
+  resize: none;
+}
+
 body {
   background: #d8d8d8;
 }

@@ -20,4 +20,25 @@ $(document).ready(function() {
         scrollTop: wrapper[0].scrollHeight
     }, 1600);
 
+    var source = new EventSource('/posts');
+    source.addEventListener("new_message", function(event) {
+        return console.log(event.data);
+    });
+
+    $(".submit").click(function() {
+        var name = $(".name").val();
+        var message = $(".message_text").val();
+        $.ajax({
+            url: '/posts/create',
+            cache: false,
+            data: {
+                message: message,
+                name: name
+            },
+            method: "POST"})
+            .done(function (data) {
+                $(".message").val("");
+                return false
+            })
+    });
 });

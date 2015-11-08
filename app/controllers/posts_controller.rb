@@ -6,10 +6,10 @@ class PostsController < ApplicationController
 
   def create
     response.headers['Content-Type'] = 'text/event-stream'
-    post = Post.create(user: "Cosima", message: "Hello THERE")
+    Post.create(user: params[:name], message: params[:message])
     sse = SSE.new(response.stream)
     begin
-        sse.write(post, event: "new_message")
+        sse.write({message: params[:message], name: params[:name]}, event: "new_message")
     rescue IOError
       # Client Disconnected
     ensure
