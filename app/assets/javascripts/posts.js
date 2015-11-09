@@ -23,7 +23,6 @@ $(document).ready(function() {
 
     var source = new EventSource('/message');
     source.addEventListener("new_message", function(event) {
-        $.titleAlert('New message', {duration:500, interval:100});
         var data = JSON.parse(event.data);
         if (data.id !== last_id) {
             last_id = data.id;

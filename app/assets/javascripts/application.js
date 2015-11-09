@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require turbolinks
-//= require jquery.titlealert.min
 //= require_tree .
 
