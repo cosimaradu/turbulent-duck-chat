@@ -23,6 +23,7 @@ $(document).ready(function() {
 
     var source = new EventSource('/message');
     source.addEventListener("new_message", function(event) {
+        $.titleAlert('New message', {duration:500, interval:100});
         var data = JSON.parse(event.data);
         if (data.id !== last_id) {
             last_id = data.id;
@@ -33,8 +34,10 @@ $(document).ready(function() {
                     data.created + '</strong></div></h2></td><td><div class="message bubble">' +
                     data.message_text + '</div></td></tr>')
             );
+            wrapper.stop().animate({
+                scrollTop: wrapper[0].scrollHeight
+            }, 500);
         }
-        return console.log(event.data);
     });
 
 
