@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var wrapper = $('.screen_wrapper');
+    var last_id = $('#last_message_id').val();
     $(function () {
         var window_height = $(window).height(),
             content_height = window_height - 200;
@@ -20,10 +21,24 @@ $(document).ready(function() {
         scrollTop: wrapper[0].scrollHeight
     }, 1600);
 
-    var source = new EventSource('/posts');
+    var source = new EventSource('/message');
     source.addEventListener("new_message", function(event) {
+        var data = JSON.parse(event.data);
+        if (data.id !== last_id) {
+            last_id = data.id;
+            $("#table").find('tbody')
+                .append($('<tr><td class="name_column"><h2 class="username shadow">' +
+                    data.name +
+                    '</h2><div class="timestamp"><i class="fa fa-clock-o"></i><strong>' +
+                    data.created + '</strong></div></h2></td><td><div class="message bubble">' +
+                    data.message_text + '</div></td></tr>')
+            );
+        }
         return console.log(event.data);
     });
+
+
+
 
     $(".submit").click(function() {
         var name = $(".name").val();
@@ -37,8 +52,6 @@ $(document).ready(function() {
             },
             method: "POST"})
             .done(function (data) {
-                $(".message").val("");
-                return false
             })
     });
 });

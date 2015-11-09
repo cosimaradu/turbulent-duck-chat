@@ -1,6 +1,7 @@
+%input#last_message_id{:name => "last_message_id", :type => "hidden", :value => @lastid}/
 .screen_wrapper.effect7
   .screen
-    %table
+    %table#table
       %tbody
         -@posts.each do |p|
           %tr
