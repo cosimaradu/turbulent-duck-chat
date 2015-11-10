@@ -56,6 +56,7 @@ $(document).ready(function() {
             method: "POST"})
             .done(function (data) {
                 $('.submit').attr("disabled", false);
+                $('.message_text').val("");
             })
     });
 });
