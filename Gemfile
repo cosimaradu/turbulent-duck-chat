@@ -12,10 +12,10 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'haml-rails'
-gem 'mysql2', '~> 0.3.18'
 gem 'font-awesome-sass'
 
 group :development, :test do
+  gem 'mysql2', '~> 0.3.18'
   gem 'byebug'
   gem 'pry-byebug'
   gem 'pry-rescue'
@@ -24,3 +24,6 @@ group :development, :test do
   gem 'better_errors'
 end
 
+group :production do
+  gem 'pg'
+end
