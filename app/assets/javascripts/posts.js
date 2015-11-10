@@ -43,6 +43,7 @@ $(document).ready(function() {
 
 
     $(".submit").click(function() {
+        $('.submit').attr("disabled", true);
         var name = $(".name").val();
         var message = $(".message_text").val();
         $.ajax({
@@ -54,6 +55,7 @@ $(document).ready(function() {
             },
             method: "POST"})
             .done(function (data) {
+                $('.submit').attr("disabled", false);
             })
     });
 });

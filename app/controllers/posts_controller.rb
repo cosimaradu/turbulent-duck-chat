@@ -7,8 +7,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(user: params[:name], message: params[:message], uid: SecureRandom.uuid)
-    publish
+    unless params[:name].blank? || params[:message].blank?
+      Post.create(user: params[:name], message: params[:message], uid: SecureRandom.uuid)
+      publish
+    end
     render nothing: true
   end
 
